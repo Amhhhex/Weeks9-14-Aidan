@@ -8,12 +8,14 @@ public class ControllerInput : MonoBehaviour
     public Vector2 directionalInput;
 
 
-
+    public GameObject gunBarrel;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+
+        gunBarrel = GetComponentInChildren<GameObject>();
         
     }
 
@@ -41,9 +43,12 @@ public class ControllerInput : MonoBehaviour
 
     public void OnLook(InputAction.CallbackContext context)
     {
+
+        
+
         Vector2 look = context.ReadValue<Vector2>();
 
-        transform.up = look;
+        gunBarrel.transform.up = look;
 
         Debug.Log("On Look " + context.ReadValue<Vector2>());
 
