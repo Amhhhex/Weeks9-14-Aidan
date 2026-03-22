@@ -42,31 +42,27 @@ public class Week10CodingGym : MonoBehaviour
         Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
 
 
-        if (Mouse.current.leftButton.wasReleasedThisFrame)
-        {
-            spawnedObject = Instantiate(spawnObject, mousePosition, Quaternion.identity);
+        spawnedObject = Instantiate(spawnObject, mousePosition, Quaternion.identity);
 
-        }
 
         components = spawnedObject.GetComponentsInChildren<SpriteRenderer>();
 
-        currentRoutine = StartCoroutine(WoodLogGrow(components[0]));
+        currentRoutine = StartCoroutine(GrowSprite(components[0]));
         yield return currentRoutine;
 
-        currentRoutine = StartCoroutine(WellLogGrow(components[1]));
+        currentRoutine = StartCoroutine(GrowSprite(components[1]));
         yield return currentRoutine;
 
-        currentRoutine = StartCoroutine(StatueGrow(components[2]));
+        currentRoutine = StartCoroutine(GrowSprite(components[2]));
         
 
 
         yield return null;
     }
 
-    private IEnumerator WoodLogGrow(SpriteRenderer sprite)
+    private IEnumerator GrowSprite(SpriteRenderer sprite)
     {
         float progress = 0f;
-
 
         while (progress < duration)
         {
@@ -75,34 +71,7 @@ public class Week10CodingGym : MonoBehaviour
 
             yield return null;
         }
-
     }
-    private IEnumerator WellLogGrow(SpriteRenderer sprite)
-    {
-        float progress = 0f;
 
-
-        while (progress < duration)
-        {
-            progress += Time.deltaTime;
-            sprite.transform.localScale = curve.Evaluate(progress / duration) * Vector2.one;
-
-            yield return null;
-        }
-
-    }
-    private IEnumerator StatueGrow(SpriteRenderer sprite)
-    {
-        float progress = 0f;
-
-
-        while (progress < duration)
-        {
-            progress += Time.deltaTime;
-            sprite.transform.localScale = curve.Evaluate(progress / duration) * Vector2.one;
-
-            yield return null;
-        }
-
-    }
+   
 }
