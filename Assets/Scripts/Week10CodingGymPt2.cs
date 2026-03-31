@@ -27,10 +27,6 @@ public class Week10CodingGymPt2 : MonoBehaviour
     void Update()
     {
 
-
-        
-
-
     }
 
     private IEnumerator MoveCar(Vector2 position)
