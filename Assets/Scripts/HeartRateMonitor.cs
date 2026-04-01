@@ -5,29 +5,18 @@ public class HeartRateMonitor : MonoBehaviour
 {
 
     public float timer;
-
     public AnimationCurve curve;
-
     public TrailRenderer trail;
-
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
 
-        
     }
-
-    // Update is called once per frame
     void Update()
     {
-        
-
         timer += Time.deltaTime;
 
         Vector2 position = transform.position;
-
-        
-
 
         position.x += 2 * Time.deltaTime;
 
@@ -39,7 +28,6 @@ public class HeartRateMonitor : MonoBehaviour
         {
             trail.emitting = true;
         }
-
 
         float newYPosition = curve.Evaluate(timer);
 
@@ -57,17 +45,10 @@ public class HeartRateMonitor : MonoBehaviour
 
         if (worldToScreenPosition.x > Screen.width)
         {
-            
-
             worldToScreenPosition.x = 0;
             position = Camera.main.ScreenToWorldPoint(worldToScreenPosition);
         }
-
-        
-
         transform.position = position;
 
-        
-        
     }
 }
