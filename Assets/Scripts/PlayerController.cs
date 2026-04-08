@@ -2,6 +2,7 @@ using NUnit.Framework;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
@@ -34,6 +35,7 @@ public class PlayerController : MonoBehaviour
 
     public SpriteRenderer enemy;
 
+    public UnityEvent ammoPickup;
 
 
     public SpriteRenderer playerSprite;
@@ -84,6 +86,8 @@ public class PlayerController : MonoBehaviour
             {
                 GameObject currentBullet = firedBullets[i];
                 Vector2 bulletPosition = Camera.main.WorldToScreenPoint(currentBullet.transform.position);
+
+                
 
                 if (enemy != null)
                 {

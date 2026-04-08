@@ -602,7 +602,7 @@ Transform:
   m_GameObject: {fileID: 1719628022}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.17142, y: 1.16376, z: 0}
+  m_LocalPosition: {x: -0.02, y: 1.55, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -636,6 +636,21 @@ MonoBehaviour:
   bigBullets: {fileID: 7525268293508610587, guid: ed5ba069c2691d14ba9ddd327e68a793, type: 3}
   smallBullets: {fileID: 6971630790656183432, guid: 7912306f8a11fc24588575dde10714f9, type: 3}
   enemy: {fileID: 394225626}
+  ammoPickup:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   playerSprite: {fileID: 0}
 --- !u!114 &1719628026
 MonoBehaviour:
