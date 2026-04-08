@@ -533,7 +533,7 @@ MonoBehaviour:
   speed: 3
   bulletSpawnPoint: {fileID: 1502010758}
   directionalInput: {x: 0, y: 0}
-  bullet: {fileID: 144904525124688492, guid: 7c4ff86d3d2a75e40b97d204e7e540a2, type: 3}
+  bullet: {fileID: 2034444768213917287, guid: cdc16be16c117e8478b11728ac85309d, type: 3}
   spawnedBullet: {fileID: 0}
   ammo: 10
   fireRate: 1
@@ -541,7 +541,7 @@ MonoBehaviour:
   normalBulletSprite: {fileID: 529835671}
   bigBulletSprite: {fileID: 2028070920}
   smallBulletSprite: {fileID: 1313090664}
-  normalBullets: {fileID: 144904525124688492, guid: 7c4ff86d3d2a75e40b97d204e7e540a2, type: 3}
+  normalBullets: {fileID: 2034444768213917287, guid: cdc16be16c117e8478b11728ac85309d, type: 3}
   bigBullets: {fileID: 7525268293508610587, guid: ed5ba069c2691d14ba9ddd327e68a793, type: 3}
   smallBullets: {fileID: 6971630790656183432, guid: 7912306f8a11fc24588575dde10714f9, type: 3}
   playerSprite: {fileID: 0}

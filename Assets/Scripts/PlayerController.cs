@@ -32,6 +32,8 @@ public class PlayerController : MonoBehaviour
     public GameObject bigBullets;
     public GameObject smallBullets;
 
+    public SpriteRenderer enemy;
+
 
 
     public SpriteRenderer playerSprite;
@@ -82,6 +84,14 @@ public class PlayerController : MonoBehaviour
             {
                 GameObject currentBullet = firedBullets[i];
                 Vector2 bulletPosition = Camera.main.WorldToScreenPoint(currentBullet.transform.position);
+
+                if (enemy != null)
+                {
+                    if (enemy.bounds.Contains(currentBullet.transform.position))
+                    {
+                        Destroy(enemy);
+                    }
+                }
 
                 if (bulletPosition.x > 1920)
                 {
