@@ -29,16 +29,17 @@ public class PlayerController : MonoBehaviour
     public GameObject bigBulletSprite;
     public GameObject smallBulletSprite;
 
-    public GameObject normalBullets;
-    public GameObject bigBullets;
-    public GameObject smallBullets;
-
+    
     public SpriteRenderer enemy;
 
     public UnityEvent ammoPickup;
 
 
     public SpriteRenderer playerSprite;
+
+    public SmallBulletsPickup sbReload;
+    public NormalBulletsPickup nbReload;
+    public BigBulletsPickup bbReload;
     
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -55,30 +56,12 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         transform.position += (Vector3)directionalInput * speed * Time.deltaTime;
+        
 
-        if(playerSprite.bounds.Contains(normalBulletSprite.transform.position)) {
+        ammoPickup.Invoke();
 
-            bullet = normalBullets;
-            ammo = 10;
-            fireRate = 1;
 
-        }
-
-        if(playerSprite.bounds.Contains(bigBulletSprite.transform.position))
-        {
-          
-            bullet = bigBullets;
-            ammo = 5;
-            fireRate = 3;
-        }
-
-        if(playerSprite.bounds.Contains(smallBulletSprite.transform.position))
-        {
-            
-            bullet = smallBullets;
-            ammo = 20;
-            fireRate = 0.3f;
-        }
+        
 
         if (firedBullets != null)
         {
@@ -146,4 +129,31 @@ public class PlayerController : MonoBehaviour
 
 
     }
+
+    public void AmmoPickup()
+    {
+
+        if (playerSprite.bounds.Contains(normalBulletSprite.transform.position))
+        {
+
+            nbReload.Reload();
+
+        }
+
+        if (playerSprite.bounds.Contains(bigBulletSprite.transform.position))
+        {
+
+            bbReload.Reload();
+        }
+
+        if (playerSprite.bounds.Contains(smallBulletSprite.transform.position))
+        {
+            sbReload.Reload();
+            
+        }
+
+
+    }
+
+    
 }

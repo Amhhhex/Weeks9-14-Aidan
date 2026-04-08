@@ -220,6 +220,7 @@ GameObject:
   m_Component:
   - component: {fileID: 529835673}
   - component: {fileID: 529835672}
+  - component: {fileID: 529835674}
   m_Layer: 0
   m_Name: Normal Bullets
   m_TagString: Untagged
@@ -301,6 +302,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &529835674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 529835671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e723fee96965b2d479b96561a620e77b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NormalBulletsPickup
+  player: {fileID: 1719628022}
+  bullet: {fileID: 2034444768213917287, guid: cdc16be16c117e8478b11728ac85309d, type: 3}
 --- !u!1 &1265777200
 GameObject:
   m_ObjectHideFlags: 0
@@ -403,6 +418,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1313090666}
   - component: {fileID: 1313090665}
+  - component: {fileID: 1313090667}
   m_Layer: 0
   m_Name: Small Bullets
   m_TagString: Untagged
@@ -484,6 +500,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1313090667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1313090664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4313bc42f50afd9479735df1d3958a75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SmallBulletsPickup
+  player: {fileID: 1719628022}
+  bullet: {fileID: 6971630790656183432, guid: 7912306f8a11fc24588575dde10714f9, type: 3}
 --- !u!1 &1502010757
 GameObject:
   m_ObjectHideFlags: 0
@@ -638,8 +668,23 @@ MonoBehaviour:
   enemy: {fileID: 394225626}
   ammoPickup:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1719628025}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: AmmoPickup
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   playerSprite: {fileID: 0}
+  sbReload: {fileID: 1313090667}
+  nbReload: {fileID: 529835674}
+  bbReload: {fileID: 2028070923}
 --- !u!114 &1719628026
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -792,6 +837,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2028070922}
   - component: {fileID: 2028070921}
+  - component: {fileID: 2028070923}
   m_Layer: 0
   m_Name: Big Bullets
   m_TagString: Untagged
@@ -873,6 +919,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2028070923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2028070920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26b865eadb199e74ba2939cc2a969914, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BigBulletsPickup
+  player: {fileID: 1719628022}
+  bullet: {fileID: 7525268293508610587, guid: ed5ba069c2691d14ba9ddd327e68a793, type: 3}
 --- !u!1 &2034207146
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,8 +4,9 @@ public class SmallBullets : MonoBehaviour
 {
    
     public float speed;
-
-    public float damage;
+    
+    
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -24,4 +25,6 @@ public class SmallBullets : MonoBehaviour
 
 
     }
+
+    
 }
