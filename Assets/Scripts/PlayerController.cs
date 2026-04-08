@@ -35,9 +35,7 @@ public class PlayerController : MonoBehaviour
 
 
     public SpriteRenderer playerSprite;
-    //public SpriteRenderer normalBulletSprite;
-    //public SpriteRenderer bigBulletSprite;
-    //public SpriteRenderer smallBulletSprite;
+    
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -45,9 +43,7 @@ public class PlayerController : MonoBehaviour
 
         playerSprite = GetComponent<SpriteRenderer>();
 
-        //normalBulletSprite = normalBullets.GetComponent<SpriteRenderer>();
-        //bigBulletSprite = bigBullets.GetComponent<SpriteRenderer>();
-        //smallBulletSprite = smallBullets.GetComponent<SpriteRenderer>();
+        
         
     }
 
@@ -66,6 +62,7 @@ public class PlayerController : MonoBehaviour
 
         if(playerSprite.bounds.Contains(bigBulletSprite.transform.position))
         {
+          
             bullet = bigBullets;
             ammo = 5;
             fireRate = 3;
@@ -73,6 +70,7 @@ public class PlayerController : MonoBehaviour
 
         if(playerSprite.bounds.Contains(smallBulletSprite.transform.position))
         {
+            
             bullet = smallBullets;
             ammo = 20;
             fireRate = 0.3f;
@@ -88,6 +86,7 @@ public class PlayerController : MonoBehaviour
                 if (bulletPosition.x > 1920)
                 {
                     firedBullets.Remove(currentBullet);
+                    Destroy(currentBullet);
                 }
             }
         }
