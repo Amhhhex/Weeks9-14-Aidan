@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
 
     public GameObject bullet;
 
-    public GameObject spawnedBullet;
+    
 
     public int ammo;
 
@@ -60,8 +60,6 @@ public class PlayerController : MonoBehaviour
 
         ammoPickup.Invoke();
 
-
-        
 
         if (firedBullets != null)
         {
@@ -132,27 +130,18 @@ public class PlayerController : MonoBehaviour
 
     public void AmmoPickup()
     {
-
         if (playerSprite.bounds.Contains(normalBulletSprite.transform.position))
         {
-
             nbReload.Reload();
-
         }
-
         if (playerSprite.bounds.Contains(bigBulletSprite.transform.position))
         {
-
             bbReload.Reload();
         }
-
         if (playerSprite.bounds.Contains(smallBulletSprite.transform.position))
         {
             sbReload.Reload();
-            
         }
-
-
     }
 
     

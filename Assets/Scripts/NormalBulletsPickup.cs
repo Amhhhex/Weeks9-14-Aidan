@@ -19,11 +19,6 @@ public class NormalBulletsPickup : MonoBehaviour
 
     public void Reload()
     {
-        //PlayerController playerController = player.GetComponent<PlayerController>();
-
-        //playerController.ammo = 20;
-        //playerController.fireRate = 0.3f;
-        //playerController.bullet = bullet;
 
         player.GetComponent<PlayerController>().bullet = bullet;
         player.GetComponent<PlayerController>().ammo = 10;
