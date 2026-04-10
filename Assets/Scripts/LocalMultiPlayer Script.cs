@@ -12,15 +12,21 @@ public class LocalMultiPlayer : MonoBehaviour
 
     public float animationTimer;
 
+    public float dashTimer;
+
     public AnimationCurve aniCurve;
 
     public PlayerInput attackedPlayer;
 
+    public Coroutine currentCoroutine;
+    public Coroutine dashCoroutine;
+
+    TrailRenderer playerTrail;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        playerTrail = GetComponent<TrailRenderer>();
     }
 
     // Update is called once per frame
@@ -43,11 +49,21 @@ public class LocalMultiPlayer : MonoBehaviour
 
             if (attackedPlayer != null)
             {
-                StartCoroutine(bonk(attackedPlayer.gameObject));
+                currentCoroutine = StartCoroutine(bonk(attackedPlayer.gameObject));
             }
 
 
         }
+    }
+
+    public void OnInteract(InputAction.CallbackContext context)
+    {
+        if(context.started)
+        {
+            StartCoroutine(Dash());
+
+        }
+
     }
 
     private IEnumerator bonk(GameObject player)
@@ -66,12 +82,34 @@ public class LocalMultiPlayer : MonoBehaviour
             }
 
             player.transform.localScale = new Vector3(transform.localScale.x, currentTransform, transform.localScale.z);
+            timer += Time.deltaTime;
             yield return null;
         }
         
 
 
         
+    }
+
+    private IEnumerator Dash()
+    {
+        float timer = 0f;
+        playerTrail.emitting = true;
+
+        while(timer < dashTimer)
+        {
+            moveSpeed = 5f;
+            yield return null;
+            timer += Time.deltaTime;
+        }
+
+        playerTrail.emitting = false;
+        moveSpeed = 3f;
+
+
+
+
+        yield return null;
     }
 
 
