@@ -60,7 +60,11 @@ public class LocalMultiPlayer : MonoBehaviour
     {
         if(context.started)
         {
-            StartCoroutine(Dash());
+            if(dashCoroutine != null)
+            {
+                StopCoroutine(dashCoroutine);
+            }
+            dashCoroutine = StartCoroutine(Dash());
 
         }
 
@@ -99,8 +103,9 @@ public class LocalMultiPlayer : MonoBehaviour
         while(timer < dashTimer)
         {
             moveSpeed = 5f;
-            yield return null;
             timer += Time.deltaTime;
+            yield return null;
+            
         }
 
         playerTrail.emitting = false;
