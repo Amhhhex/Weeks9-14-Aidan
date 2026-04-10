@@ -37,7 +37,7 @@ public class LocalMultiPlayerManager : MonoBehaviour
 
     }
 
-    public void TryAttack(PlayerInput attackingPlayer)
+    public PlayerInput TryAttack(PlayerInput attackingPlayer)
     {
         for(int i = 0; i < existingPlayers.Count; i++)
         {
@@ -52,10 +52,12 @@ public class LocalMultiPlayerManager : MonoBehaviour
 
             if(distanceToPlayer < 1.5f)
             {
+                
                 Debug.Log("Attack!!");
-
+                return existingPlayers[i];
             }
 
         }
+        return null;
     }
 }
